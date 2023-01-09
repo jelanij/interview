@@ -38,7 +38,8 @@ def index(request):
 		except Exception as e:
 			return JsonResponse({"status":False,"returned_data":"Error: " +str(e)},status=400)
 	else:
-		return render(request,'game.html')
+		return HttpResponse("""Create a script using python that sends a POST request this API interface http://65.32.173.116:8080/interview, parse the response, and print the color of the "details" JSON object to the screen.  The API is protected with basic authentication.  The username is "interview" and the password is "question".
+		Include a JSON object in the body of the message.  The key of the JSON object is "id" with "GET CUSTOMERS" as the string value.  Parse the response and print the color of the "details" information to the screen""")
 
 @csrf_exempt
 def get_data(request):
